@@ -3,8 +3,8 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Laden Sie nützliche IT-Tools von Kiel.network herunter.">
-  <title>Downloads - Kiel.network</title>
+  <meta name="description" content="Download von Kiel.network.">
+  <title>Download - Kiel.network</title>
   <link rel="stylesheet" href="styles.css">
 </head>
 <body>
@@ -15,17 +15,16 @@
         <li><a href="index.html">Home</a></li>
         <li><a href="about.html">Über uns</a></li>
         <li><a href="services.html">Dienstleistungen</a></li>
-        <li><a href="downloads.html">Downloads</a></li>
+        <li><a href="downloads.html">Download</a></li>
         <li><a href="contact.html">Kontakt</a></li>
       </ul>
     </nav>
   </header>
 
   <section class="downloads">
-    <h2>Downloads</h2>
-    <p>Alle verfügbaren IT-Tools und Anleitungen aus unserem GitHub-Repo:</p>
+    <h2>Download</h2>
     <ul id="download-list" class="download-list">
-      <!-- Dateien werden automatisch hier eingefügt -->
+      <!-- Dateien aus GitHub erscheinen hier automatisch -->
     </ul>
   </section>
 
@@ -36,7 +35,7 @@
   <script>
     const username = "taVERta1998";
     const repo = "Kiel.network";
-    const path = "downloads"; // Unterordner für deine Dateien im Repo
+    const path = "downloads"; // Ordnername im Repo
     const apiUrl = `https://api.github.com/repos/${username}/${repo}/contents/${path}`;
 
     async function loadDownloads() {
