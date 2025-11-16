@@ -29,14 +29,19 @@
   <p><strong>Adresse:</strong> Paul-Fuß-Straße 27, 24118 Kiel</p>
   <p><strong>Telefon:</strong> +49 176 41742261 oder 0431 59677156</p>
 
-  <!-- Formsubmit-Formular -->
-  <form action="https://formsubmit.co/yannik.schuhmacher@icloud.com" method="POST">
+  <!-- Static Forms Kontaktformular -->
+  <form action="https://api.staticforms.xyz/submit" method="POST">
+    <!-- API Key -->
+    <input type="hidden" name="accessKey" value="sf_0me911bgcg722dln33n75j1b">
+    
     <!-- Spam-Schutz -->
     <input type="text" name="_honey" style="display:none">
     <input type="hidden" name="_captcha" value="true">
+    
     <!-- Weiterleitung nach Absenden -->
-    <input type="hidden" name="_next" value="https://kiel.network/contact.html">
+    <input type="hidden" name="_next" value="https://taVERta1998.github.io/Kiel.network/contact.html">
 
+    <!-- Felder -->
     <label for="name">Name</label>
     <input type="text" id="name" name="name" placeholder="Ihr Name" required>
 
