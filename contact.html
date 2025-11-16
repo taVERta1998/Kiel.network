@@ -1,16 +1,55 @@
-<form action="https://formsubmit.co/yannik.schuhmacher@icloud.com" method="POST">
-  <!-- Dein Name -->
-  <label for="name">Name</label>
-  <input type="text" id="name" name="name" required>
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Kontaktieren Sie uns für schnelle IT-Hilfe in Kiel.">
+<title>Kontakt - Kiel.network</title>
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
 
-  <!-- Deine E-Mail -->
-  <label for="email">E-Mail</label>
-  <input type="email" id="email" name="email" required>
+<header>
+  <nav>
+    <div class="logo"><h1>Kiel.network</h1></div>
+    <ul class="nav-links">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="about.html">Über uns</a></li>
+      <li><a href="services.html">Dienstleistungen</a></li>
+      <li><a href="downloads.html">Download</a></li>
+      <li><a href="contact.html" class="active">Kontakt</a></li>
+    </ul>
+  </nav>
+</header>
 
-  <!-- Nachricht -->
-  <label for="message">Nachricht</label>
-  <textarea id="message" name="message" required></textarea>
+<section class="contact">
+  <h2>Kontaktieren Sie uns</h2>
+  <p>Haben Sie Fragen oder benötigen IT-Unterstützung? Schreiben Sie uns oder rufen Sie direkt an!</p>
 
-  <!-- Absenden -->
-  <button type="submit">Absenden</button>
-</form>
+  <!-- Formsubmit-Formular -->
+  <form action="https://formsubmit.co/yannik.schuhmacher@icloud.com" method="POST">
+    <!-- Spam-Schutz -->
+    <input type="text" name="_honey" style="display:none">
+    <input type="hidden" name="_captcha" value="true">
+    <!-- Weiterleitung nach Absenden -->
+    <input type="hidden" name="_next" value="https://kiel.network/contact.html">
+
+    <label for="name">Name</label>
+    <input type="text" id="name" name="name" required>
+
+    <label for="email">E-Mail</label>
+    <input type="email" id="email" name="email" required>
+
+    <label for="message">Nachricht</label>
+    <textarea id="message" name="message" required></textarea>
+
+    <button type="submit">Absenden</button>
+  </form>
+</section>
+
+<footer>
+<p>&copy; 2025 Kiel.network | Ihr IT-Service in Kiel</p>
+</footer>
+
+</body>
+</html>
