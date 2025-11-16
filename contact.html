@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Kontaktieren Sie uns für schnelle IT-Hilfe in Kiel. Wir kümmern uns um Ihre IT-Probleme!">
+    <title>Kontakt - Kiel.network</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <nav>
+            <div class="logo">
+                <h1>Kiel.network</h1>
+            </div>
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">Über uns</a></li>
+                <li><a href="services.html">Dienstleistungen</a></li>
+                <li><a href="contact.html">Kontakt</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section class="contact">
+        <h2>Kontaktieren Sie uns</h2>
+        <p>Haben Sie Fragen oder benötigen Unterstützung bei Ihrem IT-Problem? Wir sind hier, um Ihnen zu helfen!</p>
+        <p>Sie erreichen uns über das Kontaktformular oder direkt telefonisch.</p>
+        
+        <p><strong>Yannik-Leon Schuhmacher</strong></p>
+        <p><strong>Adresse:</strong> Paul-Fuß-Straße 27, 24118 Kiel</p>
+        <p><strong>Telefon:</strong> +49 176 41742261 oder 0431 59677156</p>
+
+        <form action="submit_form.php" method="POST">
+            <label for="name">Name</label>
+            <input type="text" id="name" name="name" required>
+
+            <label for="email">E-Mail</label>
+            <input type="email" id="email" name="email" required>
+
+            <label for="message">Nachricht</label>
+            <textarea id="message" name="message" required></textarea>
+
+            <button type="submit">Absenden</button>
+        </form>
+    </section>
+
+    <footer>
+        <p>&copy; 2025 Kiel.network | Ihr IT-Service in Kiel</p>
+    </footer>
+</body>
+</html>
+
