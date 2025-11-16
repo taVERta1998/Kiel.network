@@ -1,66 +1,85 @@
 <!DOCTYPE html>
 <html lang="de">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Download von Kiel.network.">
-  <title>Download - Kiel.network</title>
-  <link rel="stylesheet" href="styles.css">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Download von Kiel.network.">
+<title>Download - Kiel.network</title>
+<link rel="stylesheet" href="styles.css">
 </head>
 <body>
-  <header>
-    <nav>
-      <div class="logo"><h1>Kiel.network</h1></div>
-      <ul class="nav-links">
-        <li><a href="index.html">Home</a></li>
-        <li><a href="about.html">Über uns</a></li>
-        <li><a href="services.html">Dienstleistungen</a></li>
-        <li><a href="downloads.html">Download</a></li>
-        <li><a href="contact.html">Kontakt</a></li>
-      </ul>
-    </nav>
-  </header>
-
-  <section class="downloads">
-    <h2>Download</h2>
-    <ul id="download-list" class="download-list">
-      <!-- Dateien aus GitHub erscheinen hier automatisch -->
+<header>
+  <nav>
+    <div class="logo"><h1>Kiel.network</h1></div>
+    <ul class="nav-links">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="about.html">Über uns</a></li>
+      <li><a href="services.html">Dienstleistungen</a></li>
+      <li><a href="downloads.html" class="active">Download</a></li>
+      <li><a href="contact.html">Kontakt</a></li>
     </ul>
-  </section>
+  </nav>
+</header>
 
-  <footer>
-    <p>&copy; 2025 Kiel.network | Ihr IT-Service in Kiel</p>
-  </footer>
+<section class="downloads">
+  <h2>Download</h2>
+  <div id="download-list" class="download-grid">
+    <!-- Dateien werden hier automatisch eingefügt -->
+  </div>
+</section>
 
-  <script>
-    const username = "taVERta1998";
-    const repo = "Kiel.network";
-    const path = "downloads"; // Ordnername im Repo
-    const apiUrl = `https://api.github.com/repos/${username}/${repo}/contents/${path}`;
+<footer>
+<p>&copy; 2025 Kiel.network | Ihr IT-Service in Kiel</p>
+</footer>
 
-    async function loadDownloads() {
-      try {
-        const response = await fetch(apiUrl);
-        const files = await response.json();
-        const list = document.getElementById("download-list");
+<script>
+const externalDownloads = [
+  { name: "Tool 1", url: "https://drive.google.com/uc?export=download&id=DEINE_DATEI_ID" },
+  { name: "Backup-Anleitung", url: "https://drive.google.com/uc?export=download&id=ANDERE_DATEI_ID" }
+];
 
-        files.forEach(file => {
-          if (file.type === "file") {
-            const li = document.createElement("li");
-            const link = document.createElement("a");
-            link.href = file.download_url;
-            link.textContent = `${file.name} (${(file.size/1024).toFixed(1)} KB)`;
-            link.target = "_blank";
-            li.appendChild(link);
-            list.appendChild(li);
-          }
-        });
-      } catch (error) {
-        console.error("Fehler beim Laden der Dateien:", error);
+const githubUsername = "taVERta1998";
+const githubRepo = "Kiel.network";
+const githubPath = "downloads"; // GitHub-Ordner
+
+const downloadList = document.getElementById("download-list");
+
+function getFileIcon(filename){
+  if(filename.endsWith(".exe")) return "💻";
+  if(filename.endsWith(".zip")) return "📦";
+  if(filename.endsWith(".pdf")) return "📄";
+  return "📁";
+}
+
+// Externe Downloads hinzufügen
+externalDownloads.forEach(file => {
+  const div = document.createElement("div");
+  div.className = "download-item";
+  div.innerHTML = `<a href="${file.url}" target="_blank">${getFileIcon(file.name)}<span>${file.name}</span></a>`;
+  downloadList.appendChild(div);
+});
+
+// GitHub-Dateien laden
+async function loadGitHubDownloads(){
+  try{
+    const apiUrl = `https://api.github.com/repos/${githubUsername}/${githubRepo}/contents/${githubPath}`;
+    const response = await fetch(apiUrl);
+    const files = await response.json();
+
+    files.forEach(file => {
+      if(file.type === "file"){
+        const div = document.createElement("div");
+        div.className = "download-item";
+        div.innerHTML = `<a href="${file.download_url}" target="_blank">${getFileIcon(file.name)}<span>${file.name}</span></a>`;
+        downloadList.appendChild(div);
       }
-    }
+    });
+  }catch(e){
+    console.error("Fehler beim Laden der GitHub-Dateien:", e);
+  }
+}
 
-    loadDownloads();
-  </script>
+loadGitHubDownloads();
+</script>
 </body>
 </html>
