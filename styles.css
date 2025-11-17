@@ -7,33 +7,12 @@ body { font-family: Arial, sans-serif; line-height: 1.6; color: #333; background
 /* =======================
    Header & Navigation
 ======================= */
-header { background-color: #0077b6; color: white; padding: 10px 0; position: relative; }
+header { background-color: #0077b6; color: white; padding: 10px 0; }
 header .logo h1 { margin: 0; text-align: center; }
 nav ul { list-style: none; display: flex; justify-content: center; flex-wrap: wrap; margin-top: 10px; }
 nav ul li { margin: 0 15px; }
 nav ul li a { color: white; text-decoration: none; font-size: 18px; font-weight: bold; padding: 5px 10px; border-radius: 5px; transition: background 0.2s; }
 nav ul li a:hover, nav ul li a.active { background-color: #005f87; }
-
-/* =======================
-   Dark Mode Button
-======================= */
-.theme-toggle {
-  position: absolute;
-  top: 15px;
-  right: 20px;
-  background: #ffffff33;
-  border: 1px solid #fff;
-  color: white;
-  padding: 8px 12px;
-  border-radius: 5px;
-  cursor: pointer;
-  font-size: 18px;
-  backdrop-filter: blur(4px);
-  transition: 0.3s;
-}
-.theme-toggle:hover {
-  background: #ffffff55;
-}
 
 /* =======================
    Hero
@@ -107,52 +86,6 @@ form button:hover { background-color: #005f87; }
    Footer
 ======================= */
 footer { background-color: #0077b6; color: white; text-align: center; padding: 10px; margin-top: 40px; }
-
-/* =======================
-   Dark Mode Styles
-======================= */
-.dark-mode {
-  background-color: #121212 !important;
-  color: #eee !important;
-}
-
-.dark-mode header {
-  background-color: #0a3d62 !important;
-}
-
-.dark-mode .hero {
-  background-color: #1b1b1b !important;
-}
-
-.dark-mode .hero h2 {
-  color: #4aa8ff !important;
-}
-
-.dark-mode .service-item,
-.dark-mode .download-item {
-  background: #1e1e1e !important;
-  border-color: #333 !important;
-  color: #eee !important;
-}
-
-.dark-mode a {
-  color: #4fa3ff !important;
-}
-
-.dark-mode footer {
-  background-color: #0a3d62 !important;
-}
-
-.dark-mode form input,
-.dark-mode form textarea {
-  background: #2a2a2a;
-  color: white;
-  border-color: #444;
-}
-
-.dark-mode form button {
-  background-color: #176ba0;
-}
 
 /* =======================
    Responsive
